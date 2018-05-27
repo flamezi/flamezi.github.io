@@ -42,3 +42,19 @@ This problem exposes the most important aspect we need to keep in mind when deve
 With this approach, we effectively allow other objects to reuse the behaviors because these behaviors are not hidden in our **Duck** classes anymore. This allows us to add new behaviors without actually modifying our existing behavior classes or any of the Duck classes that use the fly and quack behavior.
 
 ![_config.yml]({{ site.baseurl }}/images/strategy/figure04.png)
+
+Actual integration of this approach would require us to add two new instance variables to our **Duck** class. Now each duck object will set these variables polymorphically to reference the specific behavior type it would like at runtime. With this addition, we can now remove the fly() and quack() methods in the duck classes and replace it with something like performFly() and performQuack(). These methods will then call the fly() and quack() methods in the behavior variables we just added.
+
+![_config.yml]({{ site.baseurl }}/images/strategy/figure05.png)
+
+What does this actually do? Well, it effectively removes the burden of doing the behavior from the **Duck** class and transfer the responsibility to the behavior interfaces we created. This will allow us to freely setup the behavior types of each duck subclasses depending on which behaviors we set as its flyBehavior and quackBehavior. **_This will then allow us to set the behavior our "Duck" dynamically during runtime_**.
+
+![_config.yml]({{ site.baseurl }}/images/strategy/figure06.png)
+
+![_config.yml]({{ site.baseurl }}/images/strategy/figure07.png)
+
+Further expanding the ability of the **Strategy Pattern** would be to add a setter method in the **Duck** class to dynamically change the behaviors in runtime. This will allow something like the **ModelDuck** who cannot fly to magically fly with one call from the setter method.
+
+![_config.yml]({{ site.baseurl }}/images/strategy/figure08.png)
+
+This is the magic of the **Strategy Pattern**. It allows us to define a family of algorithms, which we encapsulate and make them interchangeable. The **Strategy  Pattern** lets the algorithm vary independently from clients that use it.

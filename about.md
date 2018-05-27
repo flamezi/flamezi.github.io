@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My name is Ziggy and this blog contains book reviews of materials that I've read across my TW journey.
+My name is Ziggy and this blog contains summaries and thoughts about materials that I've read across my TW journey.
 
 ### Contact me
 
