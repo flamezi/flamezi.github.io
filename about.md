@@ -8,4 +8,4 @@ My name is Ziggy and this blog contains book reviews of materials that I've read
 
 ### Contact me
 
-[flamezi@oocl.com](mailto:flamezi@oocl.com)
+[flamezi2@oocl.com](mailto:flamezi2@oocl.com)
