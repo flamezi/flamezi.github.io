@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Strategy Pattern
+title: Head Start Design Patterns
 ---
 
-The strategy pattern
+The Head Start Design Patterns
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 
