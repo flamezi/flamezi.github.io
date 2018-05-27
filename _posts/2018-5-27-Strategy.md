@@ -25,10 +25,12 @@ Now I will try to guide you through the demonstration of this design pattern usi
 
 The book uses ducks as the example for implementing this strategy. The scenario is the developer is tasked to create a game about ducks. So obviously, he would create the **Duck** class. This duck class would contain the many methods(behaviors) that a duck would have which will then be inherited by the different duck types i.e. **MallardDuck** and **RedHeadDuck** to name a few.
 
-![_config.yml]({{ site.baseurl }}/images/strategy/figure01.jpg)
+![_config.yml]({{ site.baseurl }}/images/strategy/figure01.png)
 
 But this approach is really a **maintenance nightmare** if you think about implementing ducks that do not fly (like rubber ducks) or ducks that do not quack (like wooden ducks).
 
 What about using interfacing? Create **Flyable** and **Quackable** interfaces that ducks will implement to suit their needs.
 
-![_config.yml]({{ site.baseurl }}/images/strategy/figure02.jpg)
+![_config.yml]({{ site.baseurl }}/images/strategy/figure02.png)
+
+But what if you need to change something minor in the flying behavior? You will see that this will lead to more maintenance headaches because a simple change in the behavior will lead to an update to all of the implementations that uses that behavior.
