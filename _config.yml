@@ -6,7 +6,7 @@
 name: Ziggy's Blog
 
 # Short bio or description (displayed in the header)
-description: Blog posts about books I've read during the ThoughtWorks engagement
+description: Blog posts about books I've read during the TW journey
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://image.flaticon.com/icons/svg/167/167755.svg
@@ -21,7 +21,7 @@ footer-links:
   email: ziegmoris@gmail.com
   facebook: ziegmoris
   flickr:
-  github: flamezi/flamezi.github.io
+  github: flamezi
   instagram: ziegmoris
   linkedin:
   pinterest:
