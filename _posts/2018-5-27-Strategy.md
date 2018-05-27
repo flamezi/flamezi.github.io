@@ -34,3 +34,11 @@ What about using interfacing? Create **Flyable** and **Quackable** interfaces th
 ![_config.yml]({{ site.baseurl }}/images/strategy/figure02.png)
 
 But what if you need to change something minor in the flying behavior? You will see that this will lead to more maintenance headaches because a simple change in the behavior will lead to an update to all of the implementations that uses that behavior.
+
+This problem exposes the most important aspect we need to keep in mind when developing software. **_Change Is Constant_**. Now, with that in mind. The first thing you need to do to apply the **Strategy Pattern** is that we need to separate what changes from what stays the same.
+
+![_config.yml]({{ site.baseurl }}/images/strategy/figure03.png)
+
+With this approach, we effectively allow other objects to reuse the behaviors because these behaviors are not hidden in our **Duck** classes anymore. This allows us to add new behaviors without actually modifying our existing behavior classes or any of the Duck classes that use the fly and quack behavior.
+
+![_config.yml]({{ site.baseurl }}/images/strategy/figure04.png)
