@@ -92,3 +92,7 @@ Refactoring your production code is very important. But refactoring your test co
 1. **Insufficient Tests** - "That seems enough." This is the common programmer's mindset when it comes to creating the test suite. This will leave some holes in our testing. We should always remember that the test suite should cover all things that can possibly break.
 2. **Don’t Skip Trivial Tests** - If the test case seems very minor and easy to do, then why not just do it? It will definitely add to the scope of your test suite and it's easy to write. It's a win-win situation.
 3. **Tests Should Be Fast** - Tests are ideally ran after a change in production code to check if we broke anything during our tweaking. If the tests are very slow, then we will be stuck with waiting and waiting and eventually our time will be used up by the slow running tests. Some might even skip running the slow tests.
+
+__
+
+There are so many more code smells in the programming world and many ways to tackle them. I'd like to research more and experience these code smells before I write about them. For now, I will highly recommend again that you pick up the books about **Clean Code** and **Refactoring**.
