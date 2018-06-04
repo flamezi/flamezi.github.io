@@ -18,11 +18,11 @@ ___
 
 ![_config.yml]({{ site.baseurl }}/images/cleancode/figure01.png)
 
-##Comments
+## Comments
 
 As a programmer, I was always taught that comments are a great way to show how mature you are as a programmer because it showed that you are thinking about the next developer that will potentially work on your codes. But reading these books, I've realized that comments are just a sign of lazy development. Your codes should be able to explain themselves without the help of a few English words.
 
-###Some common code smells:
+### Some common code smells:
 
 1. Inappropriate Information
   Comments that are better placed somewhere else other than your source code should be removed. An example of this is change history. You should let your version control system handle that.
@@ -34,3 +34,5 @@ As a programmer, I was always taught that comments are a great way to show how m
   Comments are used for communicating with other developers. They lose meaning if others can't understand what you're talking about because of horrendous grammar. Try to clearly convey what you mean as best as you can.
 5. Commented-Out Code
   Again, if the commented part is no longer used or represents the current state of the system, remove those comments. You can use the version control system to check the change history.
+
+## General
