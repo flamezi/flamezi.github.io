@@ -58,8 +58,37 @@ Next up are common mistakes that programmers do when writing code. (I am guilty 
 
 ## Java
 
-The following part will now focus on language specific smells (Particularly, Java). Though since many modern languages are similar with each other, these may also apply to other languages
+The following part will now focus on language specific smells (Particularly, Java). Though since many modern languages are similar with each other, these may also apply to other languages.
 
 ### Some common code smells:
 
-1. **Avoid Long Import Lists by Using Wildcards**
+1. **Avoid Long Import Lists by Using Wildcards** - Avoid having a long list of lines on top of your java classes by using the wildcard import. Though personally, I am cautious about using the wildcard import. Because in our current system, there are many similarly named classes. The risk of using the wrong class is higher with wildcards and change them can be pretty annoying.
+2. **Constants versus Enums** - Enums are awesome to use because it unconsciously forces me to group constants together in one convenient place. It also provides the programmer to change enum values and see if any related values need some changing as well.
+
+
+
+![_config.yml]({{ site.baseurl }}/images/cleancode/figure04.png)
+
+## Names
+
+The book states that naming your code should receive the same attention as naming a child. I guess that somehow makes sense especially if you really value your work. In the words of **Michael Feathers**, author of Working Effectively with Legacy Code, *"Clean code always looks like it was written by someone who cares."*
+
+### Some common code smells:
+
+1. **Choose Descriptive Names** - 90% of what makes our code readable is actually from the names we choose. We need to take our time to choose those names wisely and keep them relevant to our code base. Careless naming will always lead to bad things.
+2. **Choose Names at the Appropriate Level of Abstraction** - Avoid picking names that communicate implementation. You should try to choose names the reflect the level of abstraction of the class or function in which you are working. Example would be a Vehicle class. Naming a method for transportation as "drive()" would be somehow inappropriate because aircrafts are also considered vehicles and the fly.
+3. **Use Standard Nomenclature Where Possible** - Use common names that are easily recognizable by industry people. Example would be for Factory classes, you may suffix them with "Factory". This way it's easily recognizable by other programmers.
+
+
+
+![_config.yml]({{ site.baseurl }}/images/cleancode/figure05.png)
+
+## Tests
+
+Refactoring your production code is very important. But refactoring your test code is equally as important. Test codes serve as your manual for how your production code behaves and it showcases the intent of the developer on what the system's behavior should be.
+
+### Some common code smells:
+
+1. **Insufficient Tests** - "That seems enough." This is the common programmer's mindset when it comes to creating the test suite. This will leave some holes in our testing. We should always remember that the test suite should cover all things that can possibly break.
+2. **Don’t Skip Trivial Tests** - If the test case seems very minor and easy to do, then why not just do it? It will definitely add to the scope of your test suite and it's easy to write. It's a win-win situation.
+3. **Tests Should Be Fast** - Tests are ideally ran after a change in production code to check if we broke anything during our tweaking. If the tests are very slow, then we will be stuck with waiting and waiting and eventually our time will be used up by the slow running tests. Some might even skip running the slow tests.
