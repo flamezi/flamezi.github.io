@@ -57,38 +57,54 @@ You need to keep these *Principles of Software Delivery*
 ![_config.yml]({{ site.baseurl }}/images/contdelivery/figure02.png)
 
 ## Configuration Management
+The definition given by the book for Configuration Management is:
 
-If your configuration management process is sound, you should be able to answer “yes” to the following questions:
-1. Could you completely re-create your production system, excluding production data, from scratch from the version-controlled assets that you store?
-2. Could you regress to an earlier, known good state of your application?
-3. Can you be sure that each deployed environment in production, in staging, and in test is set up in precisely the same way?
+**_Configuration management refers to the process by which all artifacts relevant to your project, and the relationships between them, are stored, retrieved, uniquely identified, and modified._**
 
-If not, then your organization is at risk. In particular, we recommend having a strategy for storing baselines and controlling changes to:
-1. Your applications’ source code, build scripts, tests, documentation, requirements, database scripts, libraries, and configuration files
-2. Your development, testing, and operations toolchains
-3. All environments used in development, testing, and production
-4. The entire application stack associated with your applications—both binaries and configuration
-5. The configuration associated with every application in every environment it runs in, across the entire application lifecycle (building, deployment, testing, operation)
+Seeing this, it's understandable why people often also call this as "version control". Your target should be the following points:
+1. Make sure you are able to completely recreate your production software from scratch from the assets you store in version control.
+2. Make sure you are able to revert to an earlier working state of your software.
+3. Make sure that deploying to non-production environments is exactly the same way as deploying to production.
+
+If you avoid configuration management, you are definitely at risk of having unpredictable deployments thus opening a door to many more issues.
+
+You can achieve great management by focusing on using version control properly by keeping absolutely everything in version control and committing regularly. In version control, make sure you are managing your dependencies, software configuration, and the environments. Specifically, make sure to have the following:
+1. *Your applications’ source code, build scripts, tests, documentation, requirements, database scripts, libraries, and configuration files*
+2. *Your development, testing, and operations toolchains*
+3. *All environments used in development, testing, and production*
+4. *The entire application stack associated with your applications—both binaries and configuration*
+5. *The configuration associated with every application in every environment it runs in, across the entire application lifecycle (building, deployment, testing, operation)*
 
 ![_config.yml]({{ site.baseurl }}/images/contdelivery/figure03.png)
 
 ## Continuous Integration
+Continuous Integration will always be a controversial topic for a traditional team. It is a paradigm shift for any team starting up with agile practices. The best argument I've seen for using CI is the default state of your software.
 
-To implement continuous integration is to create a paradigm shift in your team. Without CI, your application is broken until you prove otherwise. With CI, the default state of your application is working, albeit with a level of confidence that depends upon the extent of your automated test coverage. CI creates a tight feedback loop which allows you to find problems as soon as they are introduced, when they are cheap to fix.
+*Without CI, your application is broken until you prove otherwise. With CI, the default state of your application is working*
 
-An established CI system is a foundation on which you can build more infrastructure:
-1. Big visible displays which aggregate information from your build system to provide high-quality feedback
-2. A system of reference for reports and installers for your testing team
-3. A provider of data on the quality of the application for project managers
-4. A system that can be extended out to production, using the deployment pipeline, which provides testers and operations staff with push-button deployments
+Though this comes with a disclaimer. The "working" there depends on the coverage of your automated testing. Using CI creates a feedback mechanism that is fast and reliable. Having this fast feedback allows us to respond to issues when they first pop up. This means it will definitely be cheaper to fix.
+
+There are three main things you need to begin setting up your CI:
+*Version Control*, *An Automated Build*, and *Agreement of the Team*
+These three points are pretty much self explanatory (also, I just don't want to repeat myself over and over again ;) ).
+
+Establishing your team's CI will pave way to many great things that will benefit your team. Namely, you can have:
+1. Visual tools to display information about your builds which will provide easier ways to give you feedback (in our team, we use two monitors placed in a common area).
+2. Data about your overall quality (this is will be loved by managers).
+3. A pipeline to not only build, test, and deploy to non-prod environments but also to prod environment itself.
 
 ![_config.yml]({{ site.baseurl }}/images/contdelivery/figure04.png)
 
 ## Implementing a Testing Strategy
+Traditionally, testing will be a separate stage in the life of a code change or enhancement. But the ideal and most effective way is actually having the testing as a common responsibility among everybody in the team. Not only this, testing should not only be stuck in a single stage. It should be performed from beginning to end.
 
-In many projects, testing is treated as a distinct phase carried out by specialists. However, high-quality software is only possible if testing becomes the responsibility of everybody involved in delivering software and is practiced right from the beginning of the project and throughout its life. Testing is primarily concerned with establishing feedback loops that drive development, design, and release. Any plan that defers testing to the end of the project is broken because it removes the feedback loop that generates higher quality, higher productivity, and, most importantly of all, any measure of how complete the project is. The shortest feedback loops are created through sets of automated tests that are run upon every change to the system. Such tests should run at all levels—from unit tests up to acceptance tests (both functional and nonfunctional). Automated tests should be supplemented with manual testing such as exploratory testing and showcases.
+Constant testing will drive our development, design, and release. If we establish a great feedback mechanism, we can be assured that we will detect issues with the deployment early on. This feedback loop is made possible by your automated tests. These tests work hand in hand with manual testing because we should target a complete testing strategy where we test from unit tests up to the exploratory testing and showcases.
 
-Testing is fundamentally interconnected with your definition of “done,” and your testing strategy should be focused on being able to deliver that understanding feature by feature and ensuring that testing is pervasive throughout your process.
+![_config.yml]({{ site.baseurl }}/images/contdelivery/figure05.png)
+
+Looking at the figure above, your team should target to have all these implemented when deploying software. This will definitely ensure high quality software.
+
+Testing should be tightly coupled with your definition of **done**. Your testing strategy will ensure that this is true in every increment to your software.
 
 __
 
